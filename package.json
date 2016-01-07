@@ -1,0 +1,26 @@
+{
+  "name": "babel-preset-es2015-webpack",
+  "description": "",
+  "version": "0.0.0",
+  "main": "./index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gajus/babel-preset-es2015-webpack"
+  },
+  "keywords": [
+    "babel",
+    "preset",
+    "es2015",
+    "webpack"
+  ],
+  "author": {
+    "name": "Gajus Kuizinas",
+    "email": "gajus@gajus.com",
+    "url": "http://gajus.com"
+  },
+  "license": "BSD-3-Clause",
+  "scripts": {},
+  "dependencies": {
+    "babel-preset-es2015": "*"
+  }
+}
