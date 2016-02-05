@@ -41,6 +41,7 @@
     "babel-plugin-transform-es2015-destructuring": "^6.4.0",
     "babel-plugin-transform-es2015-block-scoping": "^6.4.0",
     "babel-plugin-transform-es2015-typeof-symbol": "^6.4.3",
+    "babel-plugin-transform-strict-mode": "^6.3.13",
     "babel-plugin-transform-regenerator": "^6.4.4"
   }
 }
