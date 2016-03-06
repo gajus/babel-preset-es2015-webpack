@@ -9,6 +9,7 @@ module.exports = {
         require('babel-plugin-transform-es2015-object-super'),
         require('babel-plugin-transform-es2015-shorthand-properties'),
         require('babel-plugin-transform-es2015-computed-properties'),
+        require('babel-plugin-transform-es2015-duplicate-keys'),
         require('babel-plugin-transform-es2015-for-of'),
         require('babel-plugin-transform-es2015-sticky-regex'),
         require('babel-plugin-transform-es2015-unicode-regex'),
