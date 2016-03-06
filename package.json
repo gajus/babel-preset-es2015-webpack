@@ -1,7 +1,7 @@
 {
   "name": "babel-preset-es2015-webpack",
   "description": "Babel preset for all es2015 plugins except babel-plugin-transform-es2015-modules-commonjs.",
-  "version": "6.3.15",
+  "version": "6.4.0",
   "main": "./index.js",
   "repository": {
     "type": "git",
