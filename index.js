@@ -1,31 +1,40 @@
+var babelPresetEs2015,
+    commonJsPlugin,
+    es2015PluginList,
+    es2015WebpackPluginList;
+
+babelPresetEs2015 = require('babel-preset-es2015');
+
+try {
+    // npm ^2
+    commonJsPlugin = require('babel-preset-es2015/node_modules/babel-plugin-transform-es2015-modules-commonjs');
+} catch (error) {
+
+}
+
+if (!commonJsPlugin) {
+    try {
+        // npm ^3
+        commonJsPlugin = require('babel-plugin-transform-es2015-modules-commonjs');
+    } catch (error) {
+
+    }
+}
+
+if (!commonJsPlugin) {
+    throw new Error('Cannot resolve "babel-plugin-transform-es2015-modules-commonjs".');
+}
+
+es2015PluginList = babelPresetEs2015.plugins;
+
+es2015WebpackPluginList = es2015PluginList.filter(function (es2015Plugin) {
+    return es2015Plugin !== commonJsPlugin;
+});
+
+if (es2015PluginList.length !== es2015WebpackPluginList.length + 1) {
+    throw new Error('Cannot remove "babel-plugin-transform-es2015-modules-commonjs" from the plugin list.');
+}
+
 module.exports = {
-    plugins: [
-        require('babel-plugin-transform-es2015-template-literals'),
-        require('babel-plugin-transform-es2015-literals'),
-        require('babel-plugin-transform-es2015-function-name'),
-        require('babel-plugin-transform-es2015-arrow-functions'),
-        require('babel-plugin-transform-es2015-block-scoped-functions'),
-        require('babel-plugin-transform-es2015-classes'),
-        require('babel-plugin-transform-es2015-object-super'),
-        require('babel-plugin-transform-es2015-shorthand-properties'),
-        require('babel-plugin-transform-es2015-computed-properties'),
-        require('babel-plugin-transform-es2015-duplicate-keys'),
-        require('babel-plugin-transform-es2015-for-of'),
-        require('babel-plugin-transform-es2015-sticky-regex'),
-        require('babel-plugin-transform-es2015-unicode-regex'),
-        require('babel-plugin-check-es2015-constants'),
-        require('babel-plugin-transform-es2015-spread'),
-        require('babel-plugin-transform-es2015-parameters'),
-        require('babel-plugin-transform-es2015-destructuring'),
-        require('babel-plugin-transform-es2015-block-scoping'),
-        require('babel-plugin-transform-es2015-typeof-symbol'),
-        require('babel-plugin-transform-strict-mode'),
-        [
-            require('babel-plugin-transform-regenerator'),
-            {
-                async: false,
-                asyncGenerators: false
-            }
-        ]
-    ]
+    plugins: es2015WebpackPluginList
 };
