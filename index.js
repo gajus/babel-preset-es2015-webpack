@@ -32,6 +32,7 @@ es2015WebpackPluginList = es2015PluginList.filter(function (es2015Plugin) {
 });
 
 if (es2015PluginList.length !== es2015WebpackPluginList.length + 1) {
+    console.warn('Check your plugins and that you have closed all the brackets correctly inside your webpack.config file.');
     throw new Error('Cannot remove "babel-plugin-transform-es2015-modules-commonjs" from the plugin list.');
 }
 
