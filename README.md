@@ -1,3 +1,22 @@
+# Deprecated
+
+As of Babel version [v6.13.0](https://github.com/babel/babel/blob/master/CHANGELOG.md#v6130-2016-08-04), `babel-preset-es2015` supports `modules` option.
+
+Use [preset options](https://babeljs.io/docs/plugins/#pluginpresets-options) to [disable transformation of the ES6 module syntax](https://babeljs.io/docs/plugins/preset-es2015/#options):
+
+```json
+{
+    "presets": [
+        [
+            "es2015",
+            {
+                "modules": false
+            }
+        ]
+    ]
+}
+```
+
 # babel-preset-es2015-webpack
 
 [![NPM version](http://img.shields.io/npm/v/babel-preset-es2015-webpack.svg?style=flat-square)](https://www.npmjs.org/package/babel-preset-es2015-webpack)
