@@ -28,7 +28,7 @@ if (!commonJsPlugin) {
 es2015PluginList = babelPresetEs2015.plugins;
 
 es2015WebpackPluginList = es2015PluginList.filter(function (es2015Plugin) {
-    return es2015Plugin !== commonJsPlugin;
+    return Array.isArray(es2015Plugin) ? es2015Plugin[0] !== commonJsPlugin : es2015Plugin !== commonJsPlugin;
 });
 
 if (es2015PluginList.length !== es2015WebpackPluginList.length + 1) {
